@@ -1,0 +1,44 @@
+<div class="col-sm-8 commodityBody">>
+    <div class="commodityTitle container d-flex flex-column align-items-center mt-2 mb-4 p-3">
+        <h1 class="display-4 mr-3">商品清單</h1>
+        <div class="btn-group m-2" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-primary" href="/admin/commodity/create">新增商品</a>
+        <a type="button" class="btn btn-danger" href="/admin/commodities/removed">下架商品清單</a>
+        </div>    
+    </div>    
+    <ul class="list-unstyled mb-5">
+    {{#each commodity}}    
+    <li class="media commodityLi m-3">
+        <img src="{{this.image}}" class="mr-3" width="200" height="200">
+        <div class="media-body m-3">
+        <h5 class="mt-0 mb-3">{{this.name}}
+            <span class="badge badge-pill badge-dark mr-4"><small>{{this.Category.name}}</small></span>
+        </h5>
+        <p>價格：{{this.price}}</p>
+        <p>
+          <span class="mr-2">銷售量：{{this.saleAmount}}</span>
+          <span>庫存量：{{this.remainingNumber}}</span>
+        </p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a type="button" class="btn btn-primary" href="/admin/commodity/{{this.id}}">詳細資訊</a>
+            <a type="button" class="btn btn-success" href="/admin/commodity/{{this.id}}/edit">修改商品資料</a>
+            <button type="button" class="btn btn-danger removed" data-id="{{this.id}}">下架商品</button>
+        </div>
+        </div>
+    </li>
+    {{/each}}
+    </ul>     
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  document.addEventListener('click', event => {
+    const target = event.target
+    const commodityID = target.dataset.id
+    if (target.matches('.removed')) {
+      axios.post(`/admin/commodity/removed/${commodityID}?_method=PUT`)
+      .then(()=> {
+          target.parentElement.parentElement.parentElement.remove()
+      })
+    }
+  })
+</script>

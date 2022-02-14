@@ -1,0 +1,101 @@
+/* main.handlebars共用部分 */
+body {
+	background: #2980b9; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#2c3e50,
+		#2980b9
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#2c3e50,
+		#2980b9
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0%;
+	background-color: rgb(247, 243, 243);
+}
+
+/*註冊登入頁面*/
+.registerBody,
+.loginBody {
+	position: relative;
+	left: 25%;
+	background-color: rgb(255, 255, 255);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 20px;
+}
+
+/*後台商品總表頁面*/
+.commodityBody {
+	left: 15%;
+}
+
+.commodityLi {
+	background-color: rgb(255, 255, 255);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.commodityTitle {
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+	width: 50%;
+}
+
+/*後台單一商品頁面*/
+.showCommodity {
+	left: 20%;
+}
+
+/*商品分類總表頁面*/
+.showCategory {
+	left: 15%;
+}
+
+.categoryTitle {
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+	width: 50%;
+}
+
+/*前台首頁*/
+.categoryLi {
+	max-width: 200px;
+}
+
+/*前台會員資料*/
+.accountPage {
+	left: 15%;
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+}
+
+.accountUl {
+	left: 15%;
+}
+
+/*最愛商品介紹*/
+.ellipsis {
+	overflow: hidden;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2; /*行數*/
+	-webkit-box-orient: vertical;
+	white-space: normal;
+}
+
+/*購物車清單*/
+.cartTable {
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+}
+
+/*購物車加減號*/
+.symbol {
+	font-size: 1.5em;
+	font-weight: bolder;
+}
